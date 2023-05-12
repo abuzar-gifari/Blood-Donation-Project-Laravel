@@ -5,6 +5,7 @@
       <link rel="stylesheet" type="text/css" href="{{ asset('css/main2.css') }}">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <script type="text/javascript" src="{{ asset('js/script.js') }}"></script>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
    </head>
    <body>
       <div class="col-12" style="height: 650px">
@@ -14,9 +15,9 @@
          @include('include.nav')
          <span id="info1">Find A Blood Donor</span>
          <div id="info" class="col-12">
-            <form>
+            <form action="{{ route('find-blood-group') }}" method="post">
+               @csrf
                <select name="bloodgroup">
-                  <option value="">Enter Blood Group</option>
                   <option value="A pos">A+</option>
                   <option value="A neg">A-</option>
                   <option value="B pos">B+</option>
@@ -26,6 +27,7 @@
                   <option value="AB pos">AB+</option>
                   <option value="AB neg">AB-</option>
                </select>
+               <button type="submit" class="btn btn-primary btn-lg">Find</button>
             </form>
          </div>
          <img class="mySlides col-12" src="images/img7.jpg">

@@ -17,7 +17,8 @@
       </div>
       <div class="col-12" style="overflow: auto; padding: 0 20% 0 20%;">
          <div class="col-12" style="text-align: left; padding: 5%; background-color: rgb(217, 219, 224);">
-            <form action="register.php" method="post">
+            <form action="{{ route('be_donor') }}" method="post">
+               @csrf
                Username(required)<span style="color: red;">*</span><br>
                <input class="in" type="text" name="username" placeholder="Enter Username" required style="color: black;"><br><br>
                Password(required)<span style="color: red;">*</span><br>

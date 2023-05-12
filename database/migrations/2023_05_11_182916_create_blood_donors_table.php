@@ -25,7 +25,6 @@ return new class extends Migration
             $table->text('email')->nullable();
             $table->text('town')->nullable();
             $table->text('state')->nullable();
-            $table->text('lastdate')->nullable();
         });
     }
 
