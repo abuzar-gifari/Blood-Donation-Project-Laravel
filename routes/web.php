@@ -1,5 +1,8 @@
 <?php
 //[]  {}   ()
+
+use App\Http\Controllers\Admin\AdminBloodDonorController;
+use App\Http\Controllers\Admin\AdminContactController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DonorController;
 use Illuminate\Support\Facades\Route;
@@ -8,6 +11,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminFaqController;
 use App\Http\Controllers\Admin\AdminHomeController;
 use App\Http\Controllers\Admin\AdminLoginController;
+use App\Http\Controllers\Admin\AdminProfileController;
+
 
 Route::get('/', function () { return view('index'); })->name('index');
 Route::get('/about', function () { return view('about'); })->name('about');
@@ -22,16 +27,14 @@ Route::get('/donor-lists', function () { return view('donor_lists'); })->name('d
 
 
 
-
-
-
-
 /* A-D-M-I-N    A-U-T-H-E-N-T-I-C-A-T-I-O-N */
 
 Route::get('admin/home',[AdminHomeController::class,'index'])->name('admin_home')->middleware('admin:admin');
 Route::get('admin/login',[AdminLoginController::class,'index'])->name('admin_login');
 Route::post('/login/submit',[AdminLoginController::class,'login_submit'])->name('admin_login_submit');
 Route::get('admin/logout',[AdminLoginController::class,'logout'])->name('admin_logout');
+
+
 
 /* A-D-M-I-N   R-O-U-T-E */
 
@@ -54,6 +57,12 @@ Route::group(['middleware'=>['admin:admin']],function(){
     Route::get('/admin/faq/delete/{id}', [AdminFaqController::class, 'delete'])->name('admin_faq_delete');
 
 
+    Route::get('/admin/blood-donors/', [AdminBloodDonorController::class, 'blood_donors'])->name('admin_blood_donor_view');
+    Route::get('/admin/contacts/', [AdminContactController::class, 'contacts'])->name('admin_contact_view');
+
+
+
+
 });
 
-/**---------------------------------  E-N-D   A-D-M-I-N   R-O-U-T-E  ---------------------------------**/
+/**---------------------------  E-N-D   A-D-M-I-N   R-O-U-T-E  ---------------------------------**/
