@@ -21,7 +21,7 @@
       </div>
       <br>
       <div style="margin: 0; padding: 0; text-align: center; overflow: auto;">
-         <div id="map" style="margin: 0; width:100%;height:400px;background:yellow">My map will go here</div>
+
          <div class="col-6" style="float: left; text-align: left; padding: 5%; background-color: rgb(217, 219, 224);">
             <h1 style="color: blue;">SUGGESTION</h1>
             <form action="{{ route('contact_send') }}" method="post">@csrf
@@ -39,8 +39,8 @@
          <br>
          <div class="col-3" style="width: 15%;float: right; background-color: rgb(217, 219, 224); overflow: auto; text-align: left; margin: 0 3% 3% 3%">
             <h1 align="center" style="color: rgb(76, 109, 86); font-size: 20px;margin: 5%;">CONTACT</h1>
-            <div align="center" style="height: 120px; width: 120px;margin: 5%;margin-left: 20%"><img class="im" src="deepppp.jpg"></div>
-            <p align="center" style="color: rgb(76, 109, 86); font-size: 20px;margin: 5%;">Deepak Kumrawat</p>
+            <div align="center" style="height: 120px; width: 120px;margin: 5%;margin-left: 20%"><img class="im" src="{{ asset('uploads/1.jpg') }}"></div>
+            <p align="center" style="color: rgb(76, 109, 86); font-size: 20px;margin: 5%;">Abdur Rob Shahin</p>
             <p align="center" style="color: rgb(76, 109, 86); font-size: 20px;margin: 5%;">7898378532</p>
          </div>
       </div>
